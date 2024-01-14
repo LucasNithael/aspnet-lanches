@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gilen\\OneDrive\\Documentos\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\LanchesMac.csproj": {}
+    "C:\\Users\\lucas\\Documents\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\LanchesMac.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gilen\\OneDrive\\Documentos\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\LanchesMac.csproj": {
+    "C:\\Users\\lucas\\Documents\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\LanchesMac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gilen\\OneDrive\\Documentos\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\LanchesMac.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\Documents\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\LanchesMac.csproj",
         "projectName": "LanchesMac",
-        "projectPath": "C:\\Users\\gilen\\OneDrive\\Documentos\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\LanchesMac.csproj",
-        "packagesPath": "C:\\Users\\gilen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gilen\\OneDrive\\Documentos\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\obj\\",
+        "projectPath": "C:\\Users\\lucas\\Documents\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\LanchesMac.csproj",
+        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lucas\\Documents\\estudos-mvc-dotnet\\LanchesMac\\LanchesMac\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gilen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

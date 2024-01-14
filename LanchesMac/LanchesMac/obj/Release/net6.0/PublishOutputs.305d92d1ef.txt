@@ -1,0 +1,7 @@
+C:\Users\lucas\Documents\estudos-mvc-dotnet\LanchesMac\LanchesMac\obj\Release\net6.0\PubTmp\Out\LanchesMac.exe
+C:\Users\lucas\Documents\estudos-mvc-dotnet\LanchesMac\LanchesMac\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\lucas\Documents\estudos-mvc-dotnet\LanchesMac\LanchesMac\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\lucas\Documents\estudos-mvc-dotnet\LanchesMac\LanchesMac\obj\Release\net6.0\PubTmp\Out\LanchesMac.dll
+C:\Users\lucas\Documents\estudos-mvc-dotnet\LanchesMac\LanchesMac\obj\Release\net6.0\PubTmp\Out\LanchesMac.deps.json
+C:\Users\lucas\Documents\estudos-mvc-dotnet\LanchesMac\LanchesMac\obj\Release\net6.0\PubTmp\Out\LanchesMac.runtimeconfig.json
+C:\Users\lucas\Documents\estudos-mvc-dotnet\LanchesMac\LanchesMac\obj\Release\net6.0\PubTmp\Out\LanchesMac.pdb
