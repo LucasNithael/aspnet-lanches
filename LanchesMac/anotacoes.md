@@ -31,7 +31,7 @@ Então bastou eu passar mais um parâmetro para string de conexão ```TrustServe
 "DefaultConnection": "Data Source=DESKTOP-VLUVVKE\\SQLEXPRESS; Initial Catalog=LanchesDatabase; Trusted_Connection=True; TrustServerCertificate=True"
 ```
 
-## Sobre passagem de dados para view pela controller
+## View fortemente tipada
 Eu não entendia muito bem o porque de passar uma coleção de objetos para uma view e na view ter que declarar novamente uma coleção para iterar sobre ela
 #### Contoller:
 ```
