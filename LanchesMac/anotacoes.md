@@ -17,3 +17,16 @@ Quando criadas as migrações dos Models é criado os arquivos de migrações de
 ## Injeção de Dependência
 A injeção de dependência ajuda a manter o baixo acoplamento entre classes concretas
 <a href="https://www.macoratti.net/19/04/c_dioc1.htm#:~:text=Este%20recurso%20permite%20a%20inje%C3%A7%C3%A3o,ser%20independente%20dos%20seus%20objetos.">Site para melhor detalhes</a>
+
+## Erro na migração
+Estava ocorrendo um erro na migração e descobri pesquisando na internet que esse erro provém da string de conexão
+### Erro:
+```
+ClientConnectionId:fe600924-5466-4a67-b57c-3a8bcc662660 Error Number:-2146893019,State:0,Class:20 A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - A cadeia de certificação foi emitida por uma autoridade que não é de confiança.)
+```
+Então bastou eu passar mais um parâmetro para string de conexão ```TrustServerCeritificate=True```
+
+### String de conexão:
+```
+"DefaultConnection": "Data Source=DESKTOP-VLUVVKE\\SQLEXPRESS; Initial Catalog=LanchesDatabase; Trusted_Connection=True; TrustServerCertificate=True"
+```
