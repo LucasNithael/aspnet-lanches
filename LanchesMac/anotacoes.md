@@ -20,13 +20,42 @@ A injeção de dependência ajuda a manter o baixo acoplamento entre classes con
 
 ## Erro na migração
 Estava ocorrendo um erro na migração e descobri pesquisando na internet que esse erro provém da string de conexão
-### Erro:
+#### Erro:
 ```
 ClientConnectionId:fe600924-5466-4a67-b57c-3a8bcc662660 Error Number:-2146893019,State:0,Class:20 A connection was successfully established with the server, but then an error occurred during the login process. (provider: SSL Provider, error: 0 - A cadeia de certificação foi emitida por uma autoridade que não é de confiança.)
 ```
 Então bastou eu passar mais um parâmetro para string de conexão ```TrustServerCeritificate=True```
 
-### String de conexão:
+#### String de conexão:
 ```
 "DefaultConnection": "Data Source=DESKTOP-VLUVVKE\\SQLEXPRESS; Initial Catalog=LanchesDatabase; Trusted_Connection=True; TrustServerCertificate=True"
 ```
+
+## View fortemente tipada
+Eu não entendia muito bem o porque de passar uma coleção de objetos para uma view e na view ter que declarar novamente uma coleção para iterar sobre ela
+#### Contoller:
+```
+ public IActionResult List()
+ {
+     var lanches = _lancheRepository.Lanches;
+     return View(lanches);
+ }
+```
+#### View
+```
+@model IEnumerable<LanchesMac.Models.Lanche>
+
+
+<div><h2>Todos os Lanches</h2></div>
+
+@foreach (var lanche in Model)
+{
+    <div>
+        <h2>Lanche: @lanche.Nome</h2>
+        <p><img src="@lanche.ImageUrl" width="100px" height="100px"/></p>
+        <p>Preço: @lanche.Preco.ToString("c")</p>
+    </div>
+}
+
+```
+Por algumas pesquisas creio que essa forma de tipar fortemente a coleção seja eficaz para a view reconhecer os objetos da coleção e o intellisense agir 
