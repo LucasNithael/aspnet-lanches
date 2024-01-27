@@ -15,6 +15,7 @@ namespace LanchesMac.Controllers
 
         public IActionResult Index()
         {
+            TempData["Nome"] = "Lucas";
             return View();
         }
         public IActionResult Demo()
