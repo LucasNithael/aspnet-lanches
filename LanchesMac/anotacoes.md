@@ -59,3 +59,41 @@ Eu não entendia muito bem o porque de passar uma coleção de objetos para uma 
 
 ```
 Por algumas pesquisas creio que essa forma de tipar fortemente a coleção seja eficaz para a view reconhecer os objetos da coleção e o intellisense agir 
+
+
+### ViewData
+Transfere dadis do Controller para a View; é do tipo ViewDataDictionary. É um dicionário que armazena dados no formato chave/valor. Exige a conversão de tipos para: verificar valores nulos, obter dados, evitar erros.
+
+```
+//Controller
+ViewData["Titulo"] = "Todos os lanches";
+ViewData["Data"] = Data Time.Now;
+
+//View
+@ViewData["Titulo"]
+@ViewData["Data"]
+```
+
+### ViewBag 
+transfere dados do Controller para View; é uma proprieade dinâmica (dynamic). É um tipo object que armazena dados no formato chave/valor. Não requer a conversão de tipos.
+
+```
+//Controller
+ViewBag.Total = "Total de lanches:";
+ViewBag.TotalLanches = lanches.Count();
+
+//View
+@ViewBag.Total
+@ViewBag.TotalLanches
+```
+
+### TempData
+Transfere dados do :Controller para a View, da View para o Controller ou de métodos Action para outro método Action no mesmo Controlador ou para um Controlador diferente. É um objeto dicionário do tipo TempDataDictionary que armazena dados do formato chave/valor. Armazena os dados temporariamente e os remove automaticamente após recuperar um valor. Exige conversão de tipos.
+
+```
+//Controller1
+TempData["Nome"] = "Lucas";
+
+//Controller2
+@TempData["Nome"]
+```
