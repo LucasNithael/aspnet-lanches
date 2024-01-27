@@ -97,3 +97,6 @@ TempData["Nome"] = "Lucas";
 //Controller2
 @TempData["Nome"]
 ```
+### Importância dos arquivos _ViewStart e _ViewImports
+- _ViewStart: ele define o layout comum a todas as views, caso uma view em questão não queria usar o layout definido no _ViewStart basta definir ```@{ Layout = null }``` no início do arquivo
+- _ViewImports: define os namespaces que poderão ser usados nas Views: ```@using LanchesMac.Models```, dessa forma as Views poderão acessar os models do projeto.
