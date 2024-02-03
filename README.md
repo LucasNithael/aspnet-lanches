@@ -128,3 +128,30 @@ São blocos de views que podemos utilziar em outras views.
 
 ![image](https://github.com/LucasNithael/lanchesMac-MVC-aspnet/assets/94084548/c68737d3-21c0-4e54-94ba-c94fd71725bd)
 
+### Tag Helper
+```<partial name="_PartialName" />```
+
+Tag Helper partial renderiza o conteúdo de forma assíncrona
+
+```<partail name="~/Pages/_PartialName.cshtml" />```
+
+Ao definir uma extensão no arquivo de partial view a Tag Helper referencia uma partial view que deve estar na mesma pasta que o arquivo que chama a partial view.
+
+### Html Helper
+
+```
+@await.Html.PartialAsync("_PartialName");
+@await.Html.RenderPartialAsync("_PartialName");
+
+@await.Html.PartialAsync("_PartialName");
+@await.Html.RenderPartialAsync("_PartialName");
+// Quando a extensão do arquivo está presente, o HTML Helper faz referência a uma partial view que deve estar na mesma pasta que o arquivo de marcação que chama a partial view.
+```
+
+### Acessando dados
+```
+<partial name="_PartialName" for="Model" />
+
+@await.Html.PartialAsync("_PartialName", model);
+@await.Html.RenderPartialAsync("_PartialName", model);
+```
