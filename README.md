@@ -41,7 +41,7 @@ Eu não entendia muito bem o porque de passar uma coleção de objetos para uma 
      return View(lanches);
  }
 ```
-#### View
+## View
 ```
 @model IEnumerable<LanchesMac.Models.Lanche>
 
@@ -61,7 +61,7 @@ Eu não entendia muito bem o porque de passar uma coleção de objetos para uma 
 Por algumas pesquisas creio que essa forma de tipar fortemente a coleção seja eficaz para a view reconhecer os objetos da coleção e o intellisense agir 
 
 
-### ViewData
+## ViewData
 Transfere dadis do Controller para a View; é do tipo ViewDataDictionary. É um dicionário que armazena dados no formato chave/valor. Exige a conversão de tipos para: verificar valores nulos, obter dados, evitar erros.
 
 ```
@@ -74,7 +74,7 @@ ViewData["Data"] = Data Time.Now;
 @ViewData["Data"]
 ```
 
-### ViewBag 
+## ViewBag 
 transfere dados do Controller para View; é uma proprieade dinâmica (dynamic). É um tipo object que armazena dados no formato chave/valor. Não requer a conversão de tipos.
 
 ```
@@ -87,7 +87,7 @@ ViewBag.TotalLanches = lanches.Count();
 @ViewBag.TotalLanches
 ```
 
-### TempData
+## TempData
 Transfere dados do :Controller para a View, da View para o Controller ou de métodos Action para outro método Action no mesmo Controlador ou para um Controlador diferente. É um objeto dicionário do tipo TempDataDictionary que armazena dados do formato chave/valor. Armazena os dados temporariamente e os remove automaticamente após recuperar um valor. Exige conversão de tipos.
 
 ```
@@ -97,6 +97,26 @@ TempData["Nome"] = "Lucas";
 //Controller2
 @TempData["Nome"]
 ```
-### Importância dos arquivos _ViewStart e _ViewImports
+## Importância dos arquivos _ViewStart e _ViewImports
 - _ViewStart: ele define o layout comum a todas as views, caso uma view em questão não queria usar o layout definido no _ViewStart basta definir ```@{ Layout = null }``` no início do arquivo
 - _ViewImports: define os namespaces que poderão ser usados nas Views: ```@using LanchesMac.Models```, dessa forma as Views poderão acessar os models do projeto.
+
+## ViewModel
+### Definição
+É um padrão de projeto que permite separar as responsaabilidades do modelo de domínio dos modelos que atendem as Views.
+Representa o conjunto de uma ou mais entidades do Modelo de domínio e de outras informações que serão exibidas em uma View.
+
+1. Contém apenas as proprieades que serão representadas na View.
+2. Pode possuir regras específicas de validação (Data Annotations).
+3. Pode conter múltiplas entidades ou objetos dos modelo de domínio.
+4. Contém a lógica da interface do usuário.
+5. Contém somente dedos e comportamentos relacionados às Views.
+
+<img src="https://github.com/LucasNithael/lanchesMac-MVC-aspnet/assets/94084548/ef13b022-d2ef-41b3-9f40-fe0829b7f64a" width="400px" />
+
+### Utilização
+- Gerenciar ou criar listas suspensas para uma entidade.
+- Criar View MestreDetalhes.
+- Usadas em carrinhos de compras.
+- Usadas em paginação de dados.
+- Usadas para implementar o Login e o Registro.
