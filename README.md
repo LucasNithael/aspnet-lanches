@@ -120,3 +120,11 @@ Representa o conjunto de uma ou mais entidades do Modelo de domínio e de outras
 - Usadas em carrinhos de compras.
 - Usadas em paginação de dados.
 - Usadas para implementar o Login e o Registro.
+
+## PartialViews
+São blocos de views que podemos utilziar em outras views. 
+- Se tivermos um PartialView dentro de uma pasta ela poderá ser usada pelas views que estão dentro dessa pasta.
+- Se tivermos um Partial view dentro da pasta Share poderemos usar essa PartialView em todas Views que estão dentro da pasta Views
+
+![image](https://github.com/LucasNithael/lanchesMac-MVC-aspnet/assets/94084548/c68737d3-21c0-4e54-94ba-c94fd71725bd)
+
