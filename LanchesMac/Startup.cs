@@ -1,4 +1,5 @@
 ﻿using LanchesMac.Context;
+using LanchesMac.Models;
 using LanchesMac.Repositories;
 using LanchesMac.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,9 @@ public class Startup
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+        // esas forma garente que um instância de CarrinhoCompra seja uma em todo projeto durante o tempo da requisição
+        services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
         services.AddControllersWithViews();
 
@@ -47,6 +51,8 @@ public class Startup
 
         app.UseRouting();
 
+        app.UseSession();
+
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints =>
@@ -56,6 +62,5 @@ public class Startup
                 pattern: "{controller=Home}/{action=Index}/{id?}");
         });
 
-        app.UseSession();
     }
 }
