@@ -164,3 +164,12 @@ Permite criar funcionalidaes semelhantes a um método Action de um controlador i
 ### Consistem em duas partes:
 1. A classe (derivada de ViewComponent)
 2. O resultado que elta retorna (um view)
+
+## Roteamento de Endpoint
+O roteamento é o processo pelo qual o framework ASP .NET Core inspeciona os requests HTTP de entrada e faz o mapeamento destes requests para executar os métodos Action correspondete dp controlador.
+![image](https://github.com/LucasNithael/lanchesMac-MVC-aspnet/assets/94084548/7ca26360-7c7c-4fbe-9b3e-a1f693efd58c)
+
+### Responsabilidades do Roteamento
+1. Mapear os requests de entraa para Action do Controlador
+2. Gerar a URL de saída que corresponde às ações do Controller
+
