@@ -155,3 +155,12 @@ Ao definir uma extensão no arquivo de partial view a Tag Helper referencia uma 
 @await.Html.PartialAsync("_PartialName", model);
 @await.Html.RenderPartialAsync("_PartialName", model);
 ```
+
+
+## View Components
+
+Permite criar funcionalidaes semelhantes a um método Action de um controlador independente de controlador. (São semelhantes às Partial Views)
+
+### Consistem em duas partes:
+1. A classe (derivada de ViewComponent)
+2. O resultado que elta retorna (um view)
