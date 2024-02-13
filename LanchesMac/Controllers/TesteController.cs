@@ -2,15 +2,11 @@
 
 namespace LanchesMac.Controllers
 {
-    public class TesteController1cs : Controller
+    public class TesteController : Controller
     {
-        public IActionResult Index()
+        public string Index()
         {
-            return View();
-        }
-        public IActionResult Demo()
-        {
-            return View();
+            return $"Testando o método Index de TesteController : {DateTime.Now}";
         }
     }
 }
