@@ -173,3 +173,17 @@ O roteamento é o processo pelo qual o framework ASP .NET Core inspeciona os req
 1. Mapear os requests de entraa para Action do Controlador
 2. Gerar a URL de saída que corresponde às ações do Controller
 
+## Tag Helpers Usadas na Validação
+1. asp-validation-summary
+É usada para exibir um resumo das mensagens de validação no formulário
+
+|   asp-validation-summary    |    Mensagem de validação exibida   |
+|--------|--------|
+All | propriedades e model
+ModelOnly | Model
+None | None
+
+2. asp-validation-for
+Anexa as mensagens de erro de validação no campo de entrada da propriedade de modelo especificada.
+
+Quando ocorre um erro de validaçõa do lado do cliente, o jQuery exibe a mensagem de erro no elemento <span>
