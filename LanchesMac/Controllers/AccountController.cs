@@ -68,5 +68,11 @@ namespace LanchesMac.Controllers
             }
             return View(registerVM);
         }
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _singInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
