@@ -78,5 +78,10 @@ namespace LanchesMac.Controllers
             await _singInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }
