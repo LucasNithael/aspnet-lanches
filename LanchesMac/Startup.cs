@@ -32,6 +32,14 @@ public class Startup
         services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy("Admin", politica =>
+            {
+                politica.RequireRole("Admin");
+            });
+        });
+
         // esas forma garente que um instância de CarrinhoCompra seja uma em todo projeto durante o tempo da requisição
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
