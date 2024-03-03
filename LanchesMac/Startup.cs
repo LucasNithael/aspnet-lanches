@@ -1,10 +1,13 @@
-﻿using LanchesMac.Context;
+﻿using LanchesMac.Areas.Admin.Services;
+using LanchesMac.Context;
 using LanchesMac.Models;
 using LanchesMac.Repositories;
 using LanchesMac.Repositories.Interfaces;
 using LanchesMac.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
+
 
 namespace LanchesMac;
 public class Startup
@@ -31,6 +34,7 @@ public class Startup
         services.AddTransient<IPedidoRepository, PedidoRepository>();
         services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+        services.AddScoped<RelatorioVendaService>();
 
         services.AddAuthorization(options =>
         {
@@ -40,10 +44,17 @@ public class Startup
             });
         });
 
+     
+
         // esas forma garente que um instância de CarrinhoCompra seja uma em todo projeto durante o tempo da requisição
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
         services.AddControllersWithViews();
+
+        services.AddPaging(options => {
+            options.ViewName = "Bootstrap4";
+            options.PageParameterName = "pageindex";
+        });
 
         services.AddMemoryCache();
         services.AddSession();

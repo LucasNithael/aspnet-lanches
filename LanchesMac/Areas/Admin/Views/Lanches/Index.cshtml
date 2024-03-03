@@ -1,11 +1,19 @@
-﻿@model IEnumerable<LanchesMac.Models.Lanche>
+﻿@model PagingList<LanchesMac.Models.Lanche>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Lanches</h1>
 
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filtro" value="@Model.RouteValue["Filter"]"/>
+    <button class="btn btn-info">Buscar</button>
+</form>
+
+<div>
+    <vc:pager paging-list="@Model"></vc:pager>
+</div>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -19,19 +27,7 @@
                 @Html.DisplayNameFor(model => model.DescricaoCurta)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DescricaoDetalhada)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Preco)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageThumbnailUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsLanchePreferido)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.EmEstoque)
@@ -52,19 +48,7 @@
                 @Html.DisplayFor(modelItem => item.DescricaoCurta)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DescricaoDetalhada)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Preco)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageThumbnailUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsLanchePreferido)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EmEstoque)
@@ -73,9 +57,9 @@
                 @Html.DisplayFor(modelItem => item.Categoria.Descricao)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.LancheId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.LancheId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.LancheId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.LancheId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.LancheId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.LancheId">Remover</a>
             </td>
         </tr>
 }
