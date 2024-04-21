@@ -22,7 +22,7 @@ namespace LanchesMac.Areas.Admin.Controllers
 
         public async Task<IActionResult> RelatorioVendasSimples(DateTime? minDate, DateTime? maxDate)
         {
-            if (minDate.HasValue)
+            if (!minDate.HasValue)
             {
                 minDate = new DateTime(DateTime.Now.Year, 1, 1);
             }

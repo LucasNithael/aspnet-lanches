@@ -36,6 +36,8 @@ public class Startup
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<RelatorioVendaService>();
 
+        services.Configure<ConfigurationImagens>(Configuration.GetSection("ConfigurationPastaImagens"));
+
         services.AddAuthorization(options =>
         {
             options.AddPolicy("Admin", politica =>
