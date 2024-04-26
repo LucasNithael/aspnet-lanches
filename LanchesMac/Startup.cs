@@ -35,6 +35,7 @@ public class Startup
         services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped<RelatorioVendaService>();
+        services.AddScoped<GraficoVendaService>();
 
         services.Configure<ConfigurationImagens>(Configuration.GetSection("ConfigurationPastaImagens"));
 
